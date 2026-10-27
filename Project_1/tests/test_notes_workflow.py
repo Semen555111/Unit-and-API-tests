@@ -3,9 +3,9 @@ import re
 import pytest
 from playwright.sync_api import expect
 
-from pages.login_page import LoginPage
-from pages.notes_page import NotesPage
-from pages.register_page import RegisterPage
+from Project_1.tests.pages.login_page import LoginPage
+from Project_1.tests.pages.notes_page import NotesPage
+from Project_1.tests.pages.register_page import RegisterPage
 
 
 @pytest.mark.order(1)
