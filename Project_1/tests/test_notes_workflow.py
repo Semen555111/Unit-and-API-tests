@@ -1,8 +1,6 @@
 import re
-
 import pytest
 from playwright.sync_api import expect
-
 from Project_1.tests.pages.login_page import LoginPage
 from Project_1.tests.pages.notes_page import NotesPage
 from Project_1.tests.pages.register_page import RegisterPage

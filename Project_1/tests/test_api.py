@@ -2,8 +2,6 @@ from uuid import uuid4
 import pytest
 
 
-
-
 @pytest.mark.usernegative
 def test_api_register_negative(api_request_context, api_new_user):
 
@@ -19,16 +17,16 @@ def test_api_register_negative(api_request_context, api_new_user):
     data = response.json()
     assert data["success"] is False
     assert "already exists" in data["message"]
+
+    
 @pytest.mark.deleteuser
 def test_api_delete_user(api_request_context, api_new_user):
     request = api_request_context
-    email = api_new_user["email"]
-    password = api_new_user["password"]
     login_response = request.post(
         "/notes/api/users/login",
         form={
-            "email": email,
-            "password": password
+            "email": api_new_user["email"],
+            "password": api_new_user["password"]
         }
     )
 
